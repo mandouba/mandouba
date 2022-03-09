@@ -1,12 +1,4 @@
 
-// const username = prompt("Please enter your name: "); // input your user name 
-// const players = {
-//    '1': 'username',
-//    '-1': 'Dealer',
-// //  }
-//  const winner = [
-//      fist one all numbers accumulated = 21
-//  ]
 const suits = ['s', 'c', 'd', 'h'];
 const ranks = ['02', '03', '04', '05', '06', '07', '08', '09', '10', 'J', 'Q', 'K', 'A'];
 const masterDeck = buildMasterDeck();
@@ -15,13 +7,16 @@ renderDeckInContainer(masterDeck, document.getElementById('master-deck-container
 /*----- app's state (variables) -----*/
 let shuffledDeck;
  let startGame = false, // the game doesnt start till you hit play game
-    userPoints = 0,
+    yourPoints = 0,
     dealerPoints = 0,// user and dealer both have to start at zero points
     gameStart= false,  // game doesnt start until you click play game, that then makes it false when you try to start it 
     gameOver = false,  //game over is set to false because the games not over until somebody loses, wins or draws plus it hasnt even started haha
-    userHand = [], 
+    yourHand = [], 
     dealerHand = [], // player and dealers hands are empty variables because they start off with nothing. 
-    deck = []; 
+    points = 0;
+    hasA = false;
+  
+    
  // deck is empty and im not sure why let jusytknow we have to implement the deck there !!!
 //variables for the deck
 
@@ -32,7 +27,8 @@ let shuffledDeck;
  // let playAgain = document.getElementById('play-again') // play again re-shuffle 
  const shuffledContainer = document.getElementById('shuffled-deck-container'); 
  console.log("right after declaration", shuffledContainer)
-
+let cards = document.getElementById("shuffled-deck-container");
+let deck = document.getElementById("shuffled-deck-container")
  //  hitButton.style.display = 'none';
 //  stayButton.style.display = 'none';
 
@@ -42,31 +38,21 @@ gameStart = true,
 gameOver = false,
 youWin = false, 
 dealerPoints = 0,
-userPoints = 0,
-playerHand = [],
-dealerHand = [],
-deck = [];
-
-
-}) // runs the game
+yourPoints = 0,
+yourHand = [newCard(), newCard()],
+dealerHand = [newCard(), newCard()];
+})
+ // when you run the game
  hitButton.addEventListener('click',function(){
      playerHand.push(newCard())
      checkForWinOrLoss()
  }) // adds a card
  stayButton.addEventListener('click',function(){
-     gameOver = true
+     gameOver = true // look over this woth Justin 
      checkForWinOrLoss()
  }) // when you click it stays with the cards you have and ends game for you now up to dealer
  document.querySelector('button').addEventListener('click', renderShuffledDeck);
 //  playAgain.addEventListener('click',function() { // when you click start a new game this is what happens.
-//      gameStart = true 
-//      gameOver = false
-//      playerWon = false
-//      dealerHand = []
-//      playerHand = []
-//      hitButton = there
-//      stayButton = there 
-//      playagain = there
 
 
 
@@ -80,16 +66,39 @@ deck = [];
       buildMasterDeck();
     }
 
-    // function get a new card from the top of the deck 
-    function newCard() {
-        return deck.shift(); 
-    }
+    // // // function get a new card from the top of the deck 
+    //  function newCard() {
+    //  return deck.shift(); 
+    // }
+
+    // function gamePoints(){
+
+    // return yourPoints =+ cards 1 + cards 2;
+    // } 
+
+    //    if(cards === 'A'){ 
+    //    let hasA = 11 if yourHand <= 21 
+    //    }
+    //      else {
+    //      let hasA =
+    //   }
+          
+    //     }
+      
+    //     }
+    //   }
+
+    // function keepScore();{
+    //   yourPoints = gamePoints(yourHand)
+    //   dealerPoints = gamePoints(dealerHand)
+
+    // }
 
    // --------------------- //function get card to show up //
     // winner of the game 
     function winnerOfGame() {
-        if ( playerPoints < 21) {
-          playerHand.push(newCard())
+        if ( yourPoints < 21) {
+          yourHand.push(newCard())
            
         }
         if (dealerPoints < 21) {
@@ -157,30 +166,6 @@ deck = [];
   
   renderShuffledDeck();
   
-// }
-
-
-//start game function 
-
-
-// function changeTurn() {
-//     turn *= -1
-// }
-
-// function checkWin() {
-//     winCombos.forEach(function(combo) {
-//         if( Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]) === 3 ) {
-//             winner = board[combo[0]]
-
-//         }
-//     })
-// }
-
-
-
-// /*---- Runs the game -----*/
-// init()
-
 
 
 // Psuedo Code //
