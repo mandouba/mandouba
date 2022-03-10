@@ -8,7 +8,14 @@ body {
     font-size: 20px;
   }
   
-
+  
+  .card-container{
+    text-align:center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    margin: 0 auto;
+    color: white;
+  }
 
   img {
  max-width: 100%;
@@ -29,6 +36,29 @@ body {
 main{
   text-align: center;
 }
+
+.flex-row
+.flex-row2
+.flex-row3
+{
+  display:flex;
+  padding: 5px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+
+.flex-row2 div {
+  padding: 10px;
+  flex: 1;
+  height: 350px;
+  text-align: center;
+}
+.flex-row2 div img{
+  padding: 10 px;
+  object-fit: contain;
+}
+
 
 #play-game{
   font-family: Arial, Helvetica, sans-serif;
@@ -80,6 +110,16 @@ main{
   
 }
 
+#shuffle-deck{
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+
 #start-game{
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px;
@@ -120,20 +160,16 @@ main{
 
 div.dealercard {
   content:url(https://i.imgur.com/IcW8Rn8.png);
-  max-width: 16%;
- max-height: 16%;
- position: absolute;
- top: 170px;
- right: 845px;
+  max-width: 50%;
+ max-height: 50%;
+ 
 }
 
  div.dealercard2 {
   content:url(https://i.imgur.com/IcW8Rn8.png);
    max-width: 16%;
-   max-height: 16%;
-  position: absolute;
-  top: 170px;
-  right: 965px;
+   max-height: 16%; 
+  
  }
 
 
@@ -141,25 +177,24 @@ div.dealercard {
   content:url(https://i.imgur.com/IcW8Rn8.png);
    max-width: 16%;
    max-height: 16%;
-   position: absolute;
-   top:565px;
-   left: 965px;
+   
 }
 
 div.playercard2 {
   content:url(https://i.imgur.com/IcW8Rn8.png);
    max-width: 16%;
    max-height: 16%;
-   position: absolute;
-   top: 565px; 
-   left: 845px;
+   
 }  
 
-div.carddeck {
+div.carddeck{
   content:url(https://i.imgur.com/IcW8Rn8.png);
    max-width: 16%;
-   max-height: 16%;
-   position: absolute;
-   top: 380px; 
-   left: 1200px;
+   max-height: 16%; 
+  
+}
+
+.card-container{
+  display: flex;
+  flex-direction: row;
 }
